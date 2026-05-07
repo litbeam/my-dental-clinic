@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здоровая Улыбка | Экспертная Стоматология 2026</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap');
+        
+        :root { --brand: #00b8a9; --brand-dark: #008a7e; }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc;
+            /* Фон с паттерном, который не перекрывает контент */
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(0, 184, 169, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        .glass { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Анимация карточек услуг */
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px -12px rgba(0, 184, 169, 0.15);
+            border-color: var(--brand);
+        }
+
+        /* ЧБ Эффект для врачей */
+        .doctor-photo {
+            filter: grayscale(100%);
+            transition: all 0.7s ease;
+        }
+        .doctor-card:hover .doctor-photo {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        /* Кастомный скроллбар */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 10px; }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <nav class="sticky top-0 z-[100] glass border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-[#00b8a9] rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-teal-200">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-black tracking-tighter leading-none">Здоровая Улыбка</div>
+                    <div class="text-[10px] uppercase tracking-[0.2em] text-teal-600 font-bold">Инновационный центр</div>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-10 font-medium text-slate-600 text-sm">
+                <a href="#services" class="hover:text-[#00b8a9] transition-colors">Технологии</a>
+                <a href="#doctors" class="hover:text-[#00b8a9] transition-colors">Команда</a>
+                <a href="#faq" class="hover:text-[#00b8a9] transition-colors">Пациентам</a>
+                <a href="#contacts" class="hover:text-[#00b8a9] transition-colors">Контакты</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+375291234567" class="hidden md:block font-bold text-slate-800 hover:text-teal-600">+375 (29) 123-45-67</a>
+                <button onclick="openModal()" class="bg-[#00b8a9] hover:bg-slate-900 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-xl shadow-teal-100">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-[85vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-slate-950">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000" class="w-full h-full object-cover opacity-50" alt="Clinic">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 text-white">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 backdrop-blur-md border border-teal-500/30 rounded-full text-teal-400 text-xs font-bold uppercase tracking-widest mb-8">
+                <span class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></span> Лидер цифровой стоматологии 2026
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[0.95] tracking-tight">Красота начинается <br><span class="text-teal-400 italic font-serif">со здоровья.</span></h1>
+            <p class="text-xl text-slate-300 max-w-2xl mb-12 leading-relaxed">Мы не просто лечим зубы — мы восстанавливаем качество жизни, используя искусственный интеллект для диагностики и швейцарские протоколы лечения.</p>
+            <div class="flex flex-col sm:flex-row gap-6">
+                <button onclick="openModal()" class="bg-teal-500 hover:bg-white hover:text-teal-600 px-12 py-6 rounded-[2rem] font-black text-xl transition-all shadow-2xl">КОНСУЛЬТАЦИЯ</button>
+                <div class="flex items-center gap-4 px-6">
+                    <div class="flex -space-x-3">
+                        <img src="https://i.pravatar.cc/100?u=1" class="w-12 h-12 rounded-full border-4 border-slate-900 shadow-xl" alt="u">
+                        <img src="https://i.pravatar.cc/100?u=2" class="w-12 h-12 rounded-full border-4 border-slate-900 shadow-xl" alt="u">
+                        <img src="https://i.pravatar.cc/100?u=3" class="w-12 h-12 rounded-full border-4 border-slate-900 shadow-xl" alt="u">
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-bold">12,000+</div>
+                        <div class="text-slate-400">довольных пациентов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-32 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div class="max-w-2xl">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Наши направления</h2>
+                <p class="text-slate-500 text-lg italic leading-relaxed">Полный спектр услуг от профилактики до сложнейших реконструкций под наркозом.</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-3xl font-black text-teal-500">100%</div>
+                    <div class="text-xs font-bold uppercase text-slate-400 tracking-widest">Безопасность</div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-3xl font-black text-teal-500">24/7</div>
+                    <div class="text-xs font-bold uppercase text-slate-400 tracking-widest">Поддержка</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="service-card glass p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-20 h-20 bg-teal-50 rounded-[2rem] flex items-center justify-center text-teal-600 text-4xl mb-8 shadow-inner"><i class="fas fa-microscope"></i></div>
+                    <h3 class="text-3xl font-bold mb-4">Терапия 2.0</h3>
+                    <ul class="text-slate-500 space-y-2 mb-8 text-sm">
+                        <li><i class="fas fa-check text-teal-400 mr-2"></i> Лечение под микроскопом Leica</li>
+                        <li><i class="fas fa-check text-teal-400 mr-2"></i> Биосовместимые материалы</li>
+                        <li><i class="fas fa-check text-teal-400 mr-2"></i> Гарантия на эстетику 5 лет</li>
+                    </ul>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div><p class="text-xs text-slate-400 uppercase font-bold mb-1">Стоимость</p><p class="text-2xl font-black">от 150 Br</p></div>
+                    <button onclick="openModal('Терапия')" class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-teal-500 transition-all"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="service-card glass p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-20 h-20 bg-blue-50 rounded-[2rem] flex items-center justify-center text-blue-600 text-4xl mb-8 shadow-inner"><i class="fas fa-tooth"></i></div>
+                    <h3 class="text-3xl font-bold mb-4 text-slate-800 font-serif">Имплантация</h3>
+                    <ul class="text-slate-500 space-y-2 mb-8 text-sm">
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Навигационные шаблоны 3D</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Системы Straumann и Osstem</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Пожизненная гарантия</li>
+                    </ul>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div><p class="text-xs text-slate-400 uppercase font-bold mb-1">Стоимость</p><p class="text-2xl font-black">от 980 Br</p></div>
+                    <button onclick="openModal('Имплантация')" class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-teal-500 transition-all"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="service-card glass p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-20 h-20 bg-indigo-50 rounded-[2rem] flex items-center justify-center text-indigo-600 text-4xl mb-8 shadow-inner"><i class="fas fa-magic"></i></div>
+                    <h3 class="text-3xl font-bold mb-4 text-slate-800 font-serif">Виниры</h3>
+                    <ul class="text-slate-500 space-y-2 mb-8 text-sm">
+                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Цифровой дизайн улыбки DSD</li>
+                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Керамика E-max (Германия)</li>
+                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Без обточки (ультраниры)</li>
+                    </ul>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div><p class="text-xs text-slate-400 uppercase font-bold mb-1">Стоимость</p><p class="text-2xl font-black">от 850 Br</p></div>
+                    <button onclick="openModal('Виниры')" class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-teal-500 transition-all"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="service-card glass p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-20 h-20 bg-rose-50 rounded-[2rem] flex items-center justify-center text-rose-600 text-4xl mb-8 shadow-inner"><i class="fas fa-baby"></i></div>
+                    <h3 class="text-3xl font-bold mb-4 text-slate-800 font-serif">Kids-Центр</h3>
+                    <ul class="text-slate-500 space-y-2 mb-8 text-sm">
+                        <li><i class="fas fa-check text-rose-400 mr-2"></i> Лечение во сне (Седация)</li>
+                        <li><i class="fas fa-check text-rose-400 mr-2"></i> Адаптация через игру</li>
+                        <li><i class="fas fa-check text-rose-400 mr-2"></i> Игровая зона и VR-очки</li>
+                    </ul>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div><p class="text-xs text-slate-400 uppercase font-bold mb-1">Стоимость</p><p class="text-2xl font-black">от 80 Br</p></div>
+                    <button onclick="openModal('Детский прием')" class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-teal-500 transition-all"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="service-card glass p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-20 h-20 bg-amber-50 rounded-[2rem] flex items-center justify-center text-amber-600 text-4xl mb-8 shadow-inner"><i class="fas fa-align-center"></i></div>
+                    <h3 class="text-3xl font-bold mb-4 text-slate-800 font-serif">Ортодонтия</h3>
+                    <ul class="text-slate-500 space-y-2 mb-8 text-sm">
+                        <li><i class="fas fa-check text-amber-400 mr-2"></i> Элайнеры (невидимые каппы)</li>
+                        <li><i class="fas fa-check text-amber-400 mr-2"></i> Самолигирующие брекеты</li>
+                        <li><i class="fas fa-check text-amber-400 mr-2"></i> Подготовка к протезированию</li>
+                    </ul>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div><p class="text-xs text-slate-400 uppercase font-bold mb-1">Стоимость</p><p class="text-2xl font-black">от 1600 Br</p></div>
+                    <button onclick="openModal('Ортодонтия')" class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-teal-500 transition-all"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="service-card glass p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-20 h-20 bg-purple-50 rounded-[2rem] flex items-center justify-center text-purple-600 text-4xl mb-8 shadow-inner"><i class="fas fa-spray-can"></i></div>
+                    <h3 class="text-3xl font-bold mb-4 text-slate-800 font-serif">Hygiene+</h3>
+                    <ul class="text-slate-500 space-y-2 mb-8 text-sm">
+                        <li><i class="fas fa-check text-purple-400 mr-2"></i> Протокол GBT (Швейцария)</li>
+                        <li><i class="fas fa-check text-purple-400 mr-2"></i> AirFlow без боли и пыли</li>
+                        <li><i class="fas fa-check text-purple-400 mr-2"></i> Укрепление эмали фтором</li>
+                    </ul>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div><p class="text-xs text-slate-400 uppercase font-bold mb-1">Стоимость</p><p class="text-2xl font-black">180 Br</p></div>
+                    <button onclick="openModal('Гигиена')" class="w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-teal-500 transition-all"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<section id="doctors" class="py-32 bg-white/60">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-5xl font-bold mb-6 italic font-serif leading-tight">Вашим здоровьем занимаются лидеры мнений</h2>
+            <p class="text-slate-500">Врачи клиники регулярно проходят стажировки в Европе и обучают других специалистов по всей СНГ.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            
+            <div class="doctor-card group cursor-pointer">
+                <div class="relative overflow-hidden rounded-[3rem] mb-8 shadow-2xl aspect-[4/5] bg-slate-200">
+                    <img src="https://plus.unsplash.com/premium_photo-1661764878654-3d0fc2eefcca?q=80&w=800" class="doctor-photo w-full h-full object-cover" alt="Волков">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
+                </div>
+                <h4 class="text-2xl font-bold mb-1">Д-р Александр Волков</h4>
+                <p class="text-teal-600 font-bold uppercase tracking-widest text-[10px]">Хирург-имплантолог • 15 лет стажа</p>
+            </div>
+
+            <div class="doctor-card group cursor-pointer">
+                <div class="relative overflow-hidden rounded-[3rem] mb-8 shadow-2xl aspect-[4/5] bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800" class="doctor-photo w-full h-full object-cover" alt="Соколова">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
+                </div>
+                <h4 class="text-2xl font-bold mb-1">Д-р Елена Соколова</h4>
+                <p class="text-teal-600 font-bold uppercase tracking-widest text-[10px]">Ведущий терапевт • К.М.Н.</p>
+            </div>
+
+            <div class="doctor-card group cursor-pointer">
+                <div class="relative overflow-hidden rounded-[3rem] mb-8 shadow-2xl aspect-[4/5] bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800" class="doctor-photo w-full h-full object-cover" alt="Морозов">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
+                </div>
+                <h4 class="text-2xl font-bold mb-1">Д-р Максим Морозов</h4>
+                <p class="text-teal-600 font-bold uppercase tracking-widest text-[10px]">Ортодонт • Эксперт элайнеров</p>
+            </div>
+
+            <div class="doctor-card group cursor-pointer">
+                <div class="relative overflow-hidden rounded-[3rem] mb-8 shadow-2xl aspect-[4/5] bg-slate-100 flex items-center justify-center border-2 border-dashed border-slate-200">
+                    <i class="fas fa-user-md text-6xl text-slate-300 group-hover:text-teal-400 transition-colors"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
+                </div>
+                <h4 class="text-2xl font-bold mb-1">Д-р Анна Белова</h4>
+                <p class="text-teal-600 font-bold uppercase tracking-widest text-[10px]">Детский врач • Психолог</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="faq" class="py-32 max-w-5xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-5xl font-bold mb-6 italic">Важно знать</h2>
+            <p class="text-slate-500">Отвечаем на вопросы, которые волнуют каждого перед приемом.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            
+            <details class="group glass p-8 rounded-[2rem] border border-transparent hover:border-teal-200 cursor-pointer transition-all shadow-sm">
+                <summary class="font-bold text-xl flex justify-between items-center list-none">Больно ли делать имплантацию? <i class="fas fa-plus group-open:rotate-45 transition-all text-teal-500"></i></summary>
+                <div class="mt-6 text-slate-600 leading-relaxed text-sm">Благодаря системе компьютерной анестезии и точному 3D-планированию, дискомфорт после установки импланта сопоставим с лечением обычного кариеса. Мы гарантируем 100% безболезненность процедуры.</div>
+            </details>
+
+            <details class="group glass p-8 rounded-[2rem] border border-transparent hover:border-teal-200 cursor-pointer transition-all shadow-sm">
+                <summary class="font-bold text-xl flex justify-between items-center list-none">Безопасно ли отбеливание? <i class="fas fa-plus group-open:rotate-45 transition-all text-teal-500"></i></summary>
+                <div class="mt-6 text-slate-600 leading-relaxed text-sm">Мы используем систему холодного света Philips Zoom 4. Она не перегревает пульпу и не разрушает эмаль. Результат — осветление до 8 тонов за один визит без повышения чувствительности.</div>
+            </details>
+
+            <details class="group glass p-8 rounded-[2rem] border border-transparent hover:border-teal-200 cursor-pointer transition-all shadow-sm">
+                <summary class="font-bold text-xl flex justify-between items-center list-none">Работаете ли вы со страховками? <i class="fas fa-plus group-open:rotate-45 transition-all text-teal-500"></i></summary>
+                <div class="mt-6 text-slate-600 leading-relaxed text-sm">Да, мы принимаем пациентов по полисам Белнефтестрах, Белгосстрах, Купала, ТАСК и других. Просто сообщите нам название вашей страховой компании при записи.</div>
+            </details>
+
+            <details class="group glass p-8 rounded-[2rem] border border-transparent hover:border-teal-200 cursor-pointer transition-all shadow-sm">
+                <summary class="font-bold text-xl flex justify-between items-center list-none">Как долго служат виниры? <i class="fas fa-plus group-open:rotate-45 transition-all text-teal-500"></i></summary>
+                <div class="mt-6 text-slate-600 leading-relaxed text-sm">Керамические виниры E-max не меняют цвет и форму десятилетиями. При правильном домашнем уходе срок службы составляет 15-20 лет и более.</div>
+            </details>
+
+            <details class="group glass p-8 rounded-[2rem] border border-transparent hover:border-teal-200 cursor-pointer transition-all shadow-sm">
+                <summary class="font-bold text-xl flex justify-between items-center list-none">Что делать при острой боли? <i class="fas fa-plus group-open:rotate-45 transition-all text-teal-500"></i></summary>
+                <div class="mt-6 text-slate-600 leading-relaxed text-sm">У нас предусмотрено время в графике для экстренных пациентов. Позвоните нам прямо сейчас — мы примем вас сегодня в течение 1-2 часов.</div>
+            </details>
+
+            <details class="group glass p-8 rounded-[2rem] border border-transparent hover:border-teal-200 cursor-pointer transition-all shadow-sm">
+                <summary class="font-bold text-xl flex justify-between items-center list-none">Есть ли у вас рассрочка? <i class="fas fa-plus group-open:rotate-45 transition-all text-teal-500"></i></summary>
+                <div class="mt-6 text-slate-600 leading-relaxed text-sm">Да, мы предлагаем рассрочку по картам «Халва», «Карта Покупок», а также внутреннюю беспроцентную рассрочку на имплантацию до 12 месяцев.</div>
+            </details>
+
+        </div>
+    </section>
+
+    <section id="contacts" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="bg-slate-900 rounded-[4rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row min-h-[600px]">
+            <div class="p-12 lg:p-20 lg:w-1/2 text-white flex flex-col justify-center space-y-12">
+                <h2 class="text-6xl font-bold font-serif italic text-teal-400 leading-none">Ждем вас</h2>
+                <div class="space-y-10">
+                    <div class="flex items-start gap-8">
+                        <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-teal-400 text-2xl"><i class="fas fa-map-pin"></i></div>
+                        <div><p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Адрес центра:</p><p class="text-2xl font-medium">Минск, пр-т Победителей, 45</p></div>
+                    </div>
+                    <div class="flex items-start gap-8">
+                        <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-teal-400 text-2xl"><i class="fas fa-phone"></i></div>
+                        <div><p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Прямая линия:</p><a href="tel:+375291234567" class="text-3xl font-black hover:text-teal-400 transition-colors">+375 (29) 123-45-67</a></div>
+                    </div>
+                </div>
+                <div class="flex gap-4 pt-6">
+                    <a href="#" class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center text-xl hover:bg-teal-500 transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center text-xl hover:bg-teal-500 transition-all"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 relative group">
+                <a href="https://www.google.com/maps/place/пр-т.+Победителей+45,+Минск" target="_blank" class="absolute inset-0 z-30 flex items-center justify-center group-hover:bg-teal-500/10 transition-all">
+                    <div class="bg-white text-slate-950 px-10 py-5 rounded-full font-black shadow-2xl opacity-0 group-hover:opacity-100 transition-all transform translate-y-8 group-hover:translate-y-0 flex items-center gap-3">
+                        <i class="fas fa-location-arrow"></i> ПРОЛОЖИТЬ МАРШРУТ
+                    </div>
+                </a>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.923456789!2d27.534567!3d53.912345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDU0JzQ0LjQiTiAyN8KwMzInMDQuNCJF!5e0!3m2!1sru!2sby!4v123456789" 
+                    class="w-full h-full min-h-[500px] grayscale transition-all duration-1000 group-hover:grayscale-0 pointer-events-none" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <div id="appointment-modal" class="hidden fixed inset-0 bg-slate-900/95 z-[9999] flex items-center justify-center p-4 backdrop-blur-2xl">
+        <div class="bg-white max-w-xl w-full rounded-[4rem] shadow-2xl relative overflow-hidden">
+            <button onclick="closeModal()" class="absolute top-10 right-10 text-slate-400 hover:text-black transition-colors"><i class="fas fa-times text-2xl"></i></button>
+            <div class="p-16">
+                <form id="appointment-form" onsubmit="handleSubmit(event)" class="space-y-8">
+                    <div class="text-center mb-10">
+                        <h2 class="text-4xl font-black mb-4">Бронь времени</h2>
+                        <p class="text-slate-400 font-medium italic">Оставьте контакты — мы позвоним в течение 5 минут.</p>
+                    </div>
+                    <input type="text" id="name" required placeholder="Ваше полное имя" class="w-full px-8 py-6 bg-slate-100 rounded-[2rem] outline-none focus:ring-2 focus:ring-teal-500 transition-all font-semibold">
+                    <input type="tel" id="phone" required placeholder="+375 (__) ___-__-__" class="w-full px-8 py-6 bg-slate-100 rounded-[2rem] outline-none focus:ring-2 focus:ring-teal-500 transition-all font-semibold text-lg">
+                    <select id="modal-service" class="w-full px-8 py-6 bg-slate-100 rounded-[2rem] outline-none focus:ring-2 focus:ring-teal-500 transition-all font-bold text-teal-700">
+                        <option value="Консультация">Общая консультация</option>
+                        <option value="Терапия">Эстетическая реставрация</option>
+                        <option value="Имплантация">Цифровая имплантация</option>
+                        <option value="Виниры">Керамические виниры</option>
+                    </select>
+                    <button type="submit" class="w-full bg-[#00b8a9] hover:bg-slate-950 text-white py-8 rounded-[2rem] font-black text-2xl transition-all shadow-2xl shadow-teal-200">ОТПРАВИТЬ ДАННЫЕ</button>
+                </form>
+                <div id="success-screen" class="hidden text-center py-10 animate-fade-in">
+                    <div class="w-24 h-24 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-10"><i class="fas fa-check"></i></div>
+                    <h3 class="text-4xl font-black mb-4">Заявка принята!</h3>
+                    <p class="text-slate-500 font-medium">Администратор уже готовит для вас свободные слоты.</p>
+                    <button onclick="closeModal()" class="mt-12 text-teal-600 font-black uppercase tracking-widest text-xs border-b-2 border-teal-600 pb-1">Закрыть окно</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(serviceName = "Консультация") {
+            document.getElementById('appointment-modal').classList.remove('hidden');
+            document.getElementById('modal-service').value = serviceName;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('appointment-modal').classList.add('hidden');
+            document.getElementById('appointment-form').classList.remove('hidden');
+            document.getElementById('success-screen').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('appointment-form').classList.add('hidden');
+            document.getElementById('success-screen').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
